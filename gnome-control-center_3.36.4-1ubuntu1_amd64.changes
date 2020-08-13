@@ -1,0 +1,70 @@
+Format: 1.8
+Date: Thu, 16 Apr 2020 12:30:37 +0200
+Source: gnome-control-center
+Binary: gnome-control-center gnome-control-center-data gnome-control-center-dev gnome-control-center-faces
+Architecture: all amd64
+Version: 1:3.36.4-1ubuntu1
+Distribution: focal
+Urgency: medium
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Changed-By: Sebastien Bacher <seb128@ubuntu.com>
+Description:
+ gnome-control-center - utilities to configure the GNOME desktop
+ gnome-control-center-data - configuration applets for GNOME - data files
+ gnome-control-center-dev - utilities to configure the GNOME desktop
+ gnome-control-center-faces - utilities to configure the GNOME desktop - faces images
+Launchpad-Bugs-Fixed: 1865845 1867548 1870600 1870735 1870737 1871195
+Changes:
+ gnome-control-center (1:3.36.4-1ubuntu1) focal; urgency=medium
+ .
+   * debian/patches/git-info-crash-on-nvidia.patch:
+     - backport a fix for an info panel segfault on nvidia cards
+       (lp: #1870737)
+   * debian/patches/git-nongnome-segfault.patch:
+     - don't segfault when started outside of GNOME (lp: #1870735)
+ .
+   [ Marco Trevisan ]
+   * d/p/0028-user-panel-Add-reference-to-selected-user-and-clear-.patch,
+   * d/p/0029-user-panel-Don-t-wait-for-fprintd-on-initialization.patch,
+     d/p/0030-fingerprint-dialog-Don-t-use-sync-calls-for-deleting.patch,
+     d/p/0031-fingerprint-dialog-Don-t-limit-the-number-of-maximum.patch:
+     - Don't wait for fprintd on initialization and don't limit enroll stages
+       (lp: #1865845)
+ .
+   [ Robert Ancell ]
+   * debian/patches/0027-window-Stop-using-HdyLeaflet.patch:
+     - Disable adaptive layouts, theres some bugs and they're not required on
+       desktop (LP: #1871195)
+   * debian/patches/0028-applications-Fix-only-connected-snap-interfaces-show.patch:
+     - Fix disconnected snap interfaces not showing (LP: #1870600)
+   * debian/patches/0029-applications-Use-new-snapd-glib-API-for-labelling-Sn.patch:
+   * debian/control:
+     - Use shared names for snap interfaces, fixing some interfaces that don't
+       have labels.
+ .
+   [ Gunnar Hjalmarsson ]
+   * debian/patches/0030-temporarily-revert-alt-char-key.patch:
+     - Revert the "Alternate Characters Key" commit temporarily awaiting
+       a proper fix of LP: #1867548.
+Checksums-Sha1:
+ b26656fb11430582cf3a22b7103669fa8f497d4d 2424824 gnome-control-center-data_3.36.4-1ubuntu1_all.deb
+ d1d47338a4099dc6c3e75b87af85cbd4ad07428f 2585728 gnome-control-center-dbgsym_3.36.4-1ubuntu1_amd64.ddeb
+ e4a1b1bbfe704d8d4f56f5040f8e448d44b9fb95 41460 gnome-control-center-dev_3.36.4-1ubuntu1_all.deb
+ 183a55b22b26c9a54ff9f8366d97b5b5ba96405b 1255128 gnome-control-center-faces_3.36.4-1ubuntu1_all.deb
+ 196e561560eee992f5f9d54d3b61c6d28682c503 28204 gnome-control-center_3.36.4-1ubuntu1_amd64.buildinfo
+ 1941fb5e208776c7f92f170af5ea3112d1005bae 1739472 gnome-control-center_3.36.4-1ubuntu1_amd64.deb
+Checksums-Sha256:
+ 45820b438339d04ddb9793911c001c379fc9d2921ee19c4ba0ca85fd24a206d3 2424824 gnome-control-center-data_3.36.4-1ubuntu1_all.deb
+ 4be1d77c78e8355ffbad4d2800f3c9b1a89066f44e4795456107b2916e3c44ff 2585728 gnome-control-center-dbgsym_3.36.4-1ubuntu1_amd64.ddeb
+ bd7280fb964dec47a190f3a9f67d2a55aae97486122df5b3df05a3314ed86882 41460 gnome-control-center-dev_3.36.4-1ubuntu1_all.deb
+ 28047fed9e2f2bafdd82d1ae086d7de30810c845754795fc6bec89f0c6cf88e3 1255128 gnome-control-center-faces_3.36.4-1ubuntu1_all.deb
+ e5bdb140bcb773a67aa3eb4f96720a8dd6e5bef0221dae7e92b2d482f47f099e 28204 gnome-control-center_3.36.4-1ubuntu1_amd64.buildinfo
+ 63f5b96a92f54bc2b9a99870a466b4f6cfd88013c19ad524ceb3b807ac857276 1739472 gnome-control-center_3.36.4-1ubuntu1_amd64.deb
+Files:
+ ba24b1a821bcc2ecba7919e2d6150f13 2424824 gnome optional gnome-control-center-data_3.36.4-1ubuntu1_all.deb
+ 78e0d1d5c180e0ff5779c09856512de3 2585728 debug optional gnome-control-center-dbgsym_3.36.4-1ubuntu1_amd64.ddeb
+ fc8b9c617ca1dcc4d1fee101e96816d3 41460 devel optional gnome-control-center-dev_3.36.4-1ubuntu1_all.deb
+ 661ba09407e4f3acb8232c959440e799 1255128 gnome optional gnome-control-center-faces_3.36.4-1ubuntu1_all.deb
+ 6e5a082b7a38dd1099534775118ce006 28204 gnome optional gnome-control-center_3.36.4-1ubuntu1_amd64.buildinfo
+ c9f166c655dbcfbb8b92f7ac8d8c868b 1739472 gnome optional gnome-control-center_3.36.4-1ubuntu1_amd64.deb
+Original-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
